@@ -229,8 +229,11 @@ def test_datum():
 
 
 def test_epsg__not_found():
-    assert CRS("+proj=longlat +datum=WGS84 +no_defs").to_epsg(0) is None
-    assert CRS.from_string("+proj=longlat +datum=WGS84 +no_defs").to_epsg() is None
+    assert CRS("+proj=longlat +datum=WGS84 +no_defs  +towgs84=0,0,0").to_epsg(0) is None
+    assert (
+        CRS.from_string("+proj=longlat +datum=WGS84 +no_defs  +towgs84=0,0,0").to_epsg()
+        is None
+    )
 
 
 def test_epsg__no_code_available():
