@@ -3,6 +3,7 @@ Change Log
 
 2.4.1
 ~~~~~
+* Wheels contain PROJ version is 6.2.1 (issue #456)
 * Fix setting lat_ts for mercator projection in :meth:`~pyproj.CRS.from_cf` and :meth:`~pyproj.CRS.to_cf` (issue #461)
 * Add repr for `pyproj.crs.CoordinateOperation` and for `pyproj.transformer.TransformerGroup` (pull #464)
 
