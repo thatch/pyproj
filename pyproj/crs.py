@@ -830,7 +830,7 @@ class CRS(_CRS):
             )
         proj_dict = {"proj": proj_name}
         if grid_mapping_name == "rotated_latitude_longitude":
-            proj_dict["o_proj"] = "latlon"
+            proj_dict["o_proj"] = "longlat"
         elif grid_mapping_name == "oblique_mercator":
             try:
                 proj_dict["lonc"] = in_cf.pop("longitude_of_projection_origin")
