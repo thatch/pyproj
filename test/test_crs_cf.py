@@ -149,7 +149,7 @@ def test_cf_rotated_latlon():
             grid_north_pole_longitude=170.0,
         )
     )
-    if LooseVersion(proj_version_str) > LooseVersion("6.3.0"):
+    if LooseVersion(proj_version_str) >= LooseVersion("6.3.0"):
         assert crs.to_dict() == {
             "proj": "ob_tran",
             "o_proj": "longlat",
@@ -183,7 +183,7 @@ def test_cf_rotated_latlon__grid():
             north_pole_grid_longitude=0,
         )
     )
-    if LooseVersion(proj_version_str) > LooseVersion("6.3.0"):
+    if LooseVersion(proj_version_str) >= LooseVersion("6.3.0"):
         assert crs.to_dict() == {
             "proj": "ob_tran",
             "o_proj": "longlat",
