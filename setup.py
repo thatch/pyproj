@@ -39,10 +39,10 @@ def get_proj_dir():
     This function finds the base PROJ directory.
     """
     proj_dir = os.environ.get("PROJ_DIR")
-    if proj_dir is None and os.path.exists(INTERNAL_PROJ_DIR):
+    if proj_dir is None and os.path.exists(os.path.join(INTERNAL_PROJ_DIR, "bin", "proj")):
         proj_dir = INTERNAL_PROJ_DIR
         print("Internally compiled directory being used {}.".format(INTERNAL_PROJ_DIR))
-    elif proj_dir is None and not os.path.exists(INTERNAL_PROJ_DIR):
+    elif proj_dir is None and not os.path.exists(os.path.join(INTERNAL_PROJ_DIR, "bin", "proj")):
         proj = find_executable("proj")
         if proj is None:
             sys.exit("Proj executable not found. Please set PROJ_DIR variable.")
